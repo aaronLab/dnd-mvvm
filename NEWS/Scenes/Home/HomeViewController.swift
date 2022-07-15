@@ -48,6 +48,8 @@ class HomeViewController: ViewController {
   }
 }
 
+// MARK: - ServiceV2TopHeadlines
+
 extension HomeViewController: ServiceV2TopHeadlines {
   @objc
   private func getArticles() {
@@ -72,6 +74,8 @@ extension HomeViewController: ServiceV2TopHeadlines {
   }
 }
 
+// MARK: - UITableViewDelegate
+
 extension HomeViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     136.0
@@ -81,6 +85,8 @@ extension HomeViewController: UITableViewDelegate {
     tableView.deselectRow(at: indexPath, animated: true)
   }
 }
+
+// MARK: - UITableViewDataSource
 
 extension HomeViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
