@@ -6,18 +6,18 @@
 //
 
 import RxSwift
+import SafariServices
 import UIKit
 
 class ViewController: UIViewController {
   var bag = DisposeBag()
-
-  var apiSession: APIService = APISession()
 
   override func viewDidLoad() {
     super.viewDidLoad()
     addViews()
     layoutViews()
     bindViews()
+    configureViewModel()
   }
 
   deinit {
@@ -29,6 +29,13 @@ class ViewController: UIViewController {
   func layoutViews() {}
 
   func bindViews() {}
-}
 
-extension ViewController: Service {}
+  func configureViewModel() {}
+
+  func openSafari(with url: URL) {
+    DispatchQueue.main.async {
+      let sfViewController = SFSafariViewController(url: url)
+      self.present(sfViewController, animated: true)
+    }
+  }
+}

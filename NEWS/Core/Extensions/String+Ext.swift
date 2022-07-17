@@ -10,7 +10,7 @@ import Foundation
 extension String {
   func urlEncoded() -> Self {
     guard let encoded = addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
-      return ""
+      return .empty
     }
 
     return encoded

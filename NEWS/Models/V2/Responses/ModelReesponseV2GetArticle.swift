@@ -31,10 +31,10 @@ extension ModelReesponseV2GetArticle {
 
     return URL(string: url)
   }
-  
+
   var convertedImageUrl: URL? {
     guard let url = urlToImage else { return nil }
-    
+
     return URL(string: url)
   }
 
